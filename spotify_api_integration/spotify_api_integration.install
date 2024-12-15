@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function spotify_api_integration_schema() {
+  $schema['spotify_artists'] = [
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'The unique identifier for the artist record.',
+      ],
+      'artist_id' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'description' => 'The unique Spotify ID for the artist.',
+      ],
+    ],
+    'primary key' => ['id'],
+    'unique keys' => [
+      'artist_id' => ['artist_id'],
+    ],
+  ];
+
+  return $schema;
+}

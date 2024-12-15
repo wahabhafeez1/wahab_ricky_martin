@@ -1,0 +1,7 @@
+name: Spotify API Integration
+type: module
+description: Provides integration with the Spotify API.
+core_version_requirement: ^10
+package: Custom
+dependencies:
+  - drupal:block

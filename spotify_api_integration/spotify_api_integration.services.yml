@@ -1,0 +1,4 @@
+services:
+  spotify_api_integration.spotify_service:
+    class: Drupal\spotify_api_integration\Service\SpotifyService
+    arguments: ['@http_client', '@config.factory']

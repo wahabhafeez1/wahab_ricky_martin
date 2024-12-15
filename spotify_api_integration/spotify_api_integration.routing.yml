@@ -1,0 +1,34 @@
+spotify_api_integration.artist_search:
+  path: '/admin/config/spotify/artist-search'
+  defaults:
+    _form: '\Drupal\spotify_api_integration\Form\ArtistSearchForm'
+    _title: 'Artist Search'
+  requirements:
+    _permission: 'administer site configuration'
+
+spotify_api_integration.settings:
+  path: '/admin/config/spotify/settings'
+  defaults:
+    _form: '\Drupal\spotify_api_integration\Form\SpotifySettingsForm'
+    _title: 'Spotify API Settings'
+  requirements:
+    _permission: 'administer site configuration'
+
+spotify_api_integration.selected_artists:
+  path: '/admin/spotify/selected-artists'
+  defaults:
+    _controller: 'Drupal\spotify_api_integration\Controller\SelectedArtistsController::content'
+    _title: 'Selected Artists'
+  requirements:
+    _permission: 'administer site configuration'
+
+spotify_api_integration.artist_page:
+  path: '/artist/{artist_id}'
+  defaults:
+    _controller: 'Drupal\spotify_api_integration\Controller\ArtistPageController::viewArtist'
+    _title_callback: 'Drupal\spotify_api_integration\Controller\ArtistPageController::getTitle'
+  requirements:
+    _permission: 'access content'  # This ensures that the user has the correct permission.
+    # The _access callback ensures the page is accessible only to logged-in users
+    user.logged_in: 'TRUE'
+   

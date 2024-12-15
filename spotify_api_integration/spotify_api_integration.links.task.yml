@@ -1,0 +1,14 @@
+spotify_api_integration.settings_tasks:
+  route_name: spotify_api_integration.settings
+  title: 'Spotify Settings'
+  base_route: spotify_api_integration.settings
+
+spotify_api_integration.artist_search_tasks:
+  route_name: spotify_api_integration.artist_search
+  title: 'Artist Search'
+  base_route: spotify_api_integration.settings
+
+spotify_api_integration.selected_artists_tasks:
+  route_name: spotify_api_integration.selected_artists
+  title: 'Selected Artists'
+  base_route: spotify_api_integration.settings
